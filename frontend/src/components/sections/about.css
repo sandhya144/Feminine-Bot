@@ -1,0 +1,279 @@
+/* ==========================================================================
+   1. BACKDROP OVERLAY
+   ========================================================================== */
+.about-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0); /* Slightly darker backdrop for focus */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999 !important; /* Ensures it sits on top of all application wrappers */
+}
+
+/* ==========================================================================
+   2. MODAL BOX CONTAINER
+   ========================================================================== */
+.about-modal-content {
+    background-color: #000000 !important; /* Pitch black canvas */
+    color: #ffffff;
+    width: 85%;
+    max-width: 950px;
+    border-radius: 16px;
+    padding: 40px;
+    position: relative; /* Base anchor point for absolute positioning */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    z-index: 100000 !important; /* Keeps the content box above the background overlay */
+}
+
+/* ==========================================================================
+   3. CLOSE BUTTON & CROSS ICON (FIXED SITUATION)
+   ========================================================================== */
+.modal-close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 8px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    /* Pulls the button element forward to remain clickable */
+    z-index: 100002 !important; 
+    transition: transform 0.2s ease !important;
+}
+
+.modal-close-btn:hover {
+    transform: scale(1.15) !important;
+}
+
+/* Hard override properties to enforce high-contrast visibility */
+.modal-close-btn img, 
+.close-icon-img {
+    width: 20px !important;
+    height: 20px !important;
+    display: block !important;
+    
+    opacity: 0.85 !important;
+    visibility: visible !important;
+}
+
+.modal-close-btn:hover img,
+.modal-close-btn:hover .close-icon-img {
+    opacity: 1.0 !important;
+}
+
+/* ==========================================================================
+   4. LAYOUT INNER TEXT AND GRAPHICS
+   ========================================================================== */
+.about-modal-body {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text-side {
+    flex: 1.2;
+}
+
+.about-text-side h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.about-text-side p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 24px;
+}
+
+.about-image-side {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+/* .about-illustration {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+} */
+
+.about-illustration {
+    max-width: 100%;
+    max-height: 300px; /* Prevents the image from expanding too large */
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   5. MOBILE RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .about-modal-body {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    .about-modal-content {
+        padding: 30px 20px;
+        width: 92%;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+    .modal-close-btn {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* ==========================================================================
+   3. LARGE EXTRA-WHITE CLOSE SYSTEM
+   ========================================================================== */
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 10px !important; /* Enlarged hit target */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 100002 !important; 
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.modal-close-btn:hover {
+    transform: scale(1.2) !important; /* Satisfying pop scale on hover */
+}
+
+/* Hard styles to enlarge image and give it high-contrast radiant white rendering */
+.modal-close-btn img, 
+.close-icon-img {
+    width: 35px !important;  /* Increased size from 20px */
+    height: 35px !important; /* Increased size from 20px */
+    display: block !important;
+    
+    /* Removed all invert filters since asset is natively white. */
+    /* Added brightness and contrast boost to maximize white intensity */
+    filter: brightness(250%) contrast(150%) !important; 
+    -webkit-filter: brightness(250%) contrast(150%) !important;
+    
+    opacity: 0.95 !important; /* Brighter resting state */
+    visibility: visible !important;
+}
+
+.modal-close-btn:hover img,
+.modal-close-btn:hover .close-icon-img {
+    opacity: 1.0 !important;
+    filter: brightness(300%) contrast(200%) !important;
+}
+
+/* ==========================================================================
+   4. SEAMLESS INNER IMAGE AND TEXT LAYOUT
+   ========================================================================== */
+.about-modal-body {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text-side {
+    flex: 1.2;
+}
+
+.about-text-side h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 14px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.about-text-side p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #cbd5e1; /* Smooth text readability color */
+    margin-bottom: 28px;
+}
+
+.about-image-side {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-illustration {
+    max-width: 100%;
+    max-height: 320px; /* Constrains image height perfectly to prevent vertical overflowing box scrollbars */
+    height: auto;
+    object-fit: contain;
+    background-color: transparent !important; /* Ensures no hidden gray boxes show behind the asset */
+}
+
+/* ==========================================================================
+   5. MOBILE LAYER COMPACTION
+   ========================================================================== */
+@media (max-width: 768px) {
+    .about-modal-body {
+        flex-direction: column-reverse;
+        gap: 24px;
+    }
+    .about-modal-content {
+        padding: 35px 24px;
+        width: 92%;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+    .modal-close-btn {
+        top: 16px;
+        right: 16px;
+    }
+    .modal-close-btn img, 
+    .close-icon-img {
+        width: 24px !important; /* Slightly more compact on mobile viewports */
+        height: 24px !important;
+    }
+}
+
+
+
+/* ==========================================================================
+   1. SMOKY DARK BLURRY BACKDROP OVERLAY
+   ========================================================================== */
+.about-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    /* Strong pure black tint to completely eliminate light transparent reflections */
+    background-color: rgba(77, 76, 76, 0.78) !important; 
+    
+    /* High-density cinematic glass blur */
+    backdrop-filter: blur(8px) brightness(40%) !important;
+    -webkit-backdrop-filter: blur(8px) brightness(40%) !important;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Makes sure it stacks on top of both your home page banner and your chatbot viewport */
+    z-index: 999999 !important; 
+}

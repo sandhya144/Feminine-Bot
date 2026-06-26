@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* ==========================================================================
+   🔒 ALL NAVBAR CONTROLS CONSOLIDATED HERE (Removes homeDesign.css dependencies)
+   ========================================================================== */
+
+.luxe-glass-navigation-bar {
+    position: fixed !important;
+    top: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    
+    width: 85% !important;
+    max-width: 1150px !important;
+    height: 72px !important;
+    
+    /* ✨ OPTIMIZED GLASS SPECIFICATION: Higher solid density color layer blend mix */
+    background: rgba(255, 255, 255, 0.75) !important; 
+    backdrop-filter: blur(25px) saturate(130%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(130%) !important;
+    
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 35px -8px rgba(0, 0, 0, 0.05) !important;
+    
+    /* Layout configurations */
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 40px !important;
+    box-sizing: border-box !important;
+    z-index: 99999 !important;
+
+}
+
+/* Forces items into an aligned row wrapper block */
+.luxe-nav-inner-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 32px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    list-style-type: none !important; /* Removes any remaining bullet artifacts */
+}
+
+/* Base button properties overrides */
+.luxe-nav-item-btn {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    padding: 6px 2px !important;
+    margin: 0 !important;
+    font-family: 'Playfair Display','Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.99rem !important;
+    font-weight: 650 !important;
+    color: #111111 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease-in-out !important;
+    display: inline-block !important;
+    letter-spacing: 0.5px;
+}
+
+.luxe-nav-item-btn:hover {
+    color: #389651 !important;
+}
+
+/* Active Pill Underline Setting */
+.luxe-active-pill {
+    font-weight: 610 !important;
+    position: relative !important;
+    color: #000000 !important;
+}
+
+.luxe-active-pill::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -2px !important;
+    left: 2px !important;
+    right: 2px !important;
+    /* 🔴 CHANGED: Set height and background to none/0 to completely turn off the underline */
+    height: 0px !important; 
+    background-color: transparent !important; 
+    border-radius: 2px !important;
+}
+
+/* Logo Dimensions */
+.luxe-brand-logo-img {
+    height: 80px !important;
+    margin-top: 13px;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.navbar {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+.head {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* ⚡ Changed top margin to 110px to push the titles below your 72px fixed navbar safely */
+    margin-top: 15px !important; 
+    padding-top: 2px !important;          
+    padding-bottom: 0px !important;
+    display: flex;
+    align-items: center;       
+    justify-content: center;   
+    box-sizing: border-box;
+    padding-left: 40px;        
+    padding-right: 40px;
+}
+
+.text-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 0px !important; 
+    margin-top: 0px !important;
+}
+
+.heading {
+    color: #4A7C59;             
+    font-size: 2.8rem;
+    font-weight: 750;
+    /* ⚡ Fixed line-height so it doesn't smash the elements together */
+    line-height: 1.2 !important;          
+    letter-spacing: -0.5px;
+    margin: 0 !important;
+}
+
+/* 🎯 NEW DEFINITION: Keeps the subtitle visible, spaced, and looking sharp */
+.headdesc {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 1.05rem !important;
+    color: #718096 !important;
+    margin: 2px 0 0 0 !important; /* Controlled margin prevents vertical collapsing */
+    line-height: 1.4 !important;
+    display: block !important;
+}
+
+/* Highlights the 'healthcare' span color */
+.health {
+    /* color: #4A7C59 !important; */
+    color: #2E6F40 !important;
+    font-weight: 600 !important;
+}
+
+.nav-link-btn {
+    background: none;
+    border: none;
+    color: #2b2b2c;          
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.nav-link-btn:hover {
+    color: #6b2779;          
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   3. EXPANDED RICH LUXE GRADIENT FOOTER LAYOUT
+   ========================================== */
+.footer-head {
+    width: 100%;
+    
+    
+    /* 🌿 MODERN SOFT MINT GRADIENT: Slightly richer green fading seamlessly into pure white */
+background: linear-gradient(180deg, #e9f3ec 0%, #ffffff 100%) !important;
+
+
+    padding: 60px 40px 30px 40px !important; /* Slightly more breathing room */
+    box-sizing: border-box;
+    margin-top: 80px;
+    /* border-top: 1px solid rgba(46, 111, 64, 0.08); Soft matching emerald border hint */
+
+    /* ✨ CLEAN BORDER: Replaced the old green tint border with a very subtle off-black hint */
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* 🏛️ MODERN PLAYFAIR DISPLAY HEADINGS */
+.footer-column h4 {
+    font-family: 'Playfair Display', serif !important;
+    color: #2E6F40 !important; /* Matching premium emerald green */
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.footer-about-text {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.94rem !important;
+    color: #5C6479 !important; /* Elegant slate grey text */
+    line-height: 1.6 !important;
+    max-width: 320px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.9rem !important;
+    color: #5C6479 !important;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Smooth hover link effects */
+.footer-column ul li:hover {
+    color: #2E6F40 !important; /* Changes to emerald green on hover */
+    transform: translateX(2px); /* Subtle slider interactive movement micro-animation */
+}
+
+.footer-divider {
+    border: 0;
+    height: 2px;
+    background: rgba(46, 111, 64, 0.25) !important; 
+    margin: 45px 0 25px 0 !important;
+}
+
+.footer-bottom-bar {
+    text-align: center;
+}
+
+.footer-headdesc {
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic !important; /* Elegant quote aesthetic style */
+    font-size: 1.05rem !important;
+    color: #2E6F40 !important;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.footerdesc {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.85rem !important;
+    color: #718096 !important;
+    margin: 4px 0 0 0 !important;
+    letter-spacing: 0.01em !important;
+}
+
+
+
+/* ✨ NEW EXPLICIT LIST FIX: Forces the clean modern styling properties down to the text items */
+.luxe-footer-list {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.luxe-footer-item {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.9rem !important;
+    
+    /* 🎨 FORCED MODERN COLOR: Overrides old hidden stylesheets */
+    color: #5C6479 !important; 
+    
+    margin-bottom: 12px !important;
+    display: block !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease-in-out !important;
+}
+
+/* Smooth hover transition to modern emerald green */
+.luxe-footer-item:hover {
+    color: #2E6F40 !important; 
+    transform: translateX(3px) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   4. SEAMLESS RESPONSIVENESS BREAKPOINTS
+   ========================================== */
+@media (max-width: 992px) {
+    .luxe-glass-navigation-bar {
+        width: 92% !important;
+        top: 15px !important;
+        padding: 0 20px !important;
+    }
+    .luxe-nav-inner-row {
+        gap: 16px !important;
+    }
+    .luxe-nav-item-btn {
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .head {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .floating-head-logo {
+        width: 65px;
+        height: 65px;
+    }
+    .text-container {
+        margin-right: 65px;
+    }
+    .heading {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    .footer-about-text {
+        margin: 0 auto;
+    }
+} 
+
+@media (max-width: 650px) {
+    .head {
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .floating-head-logo {
+        width: 70px;
+        height: 70px;
+    }
+    .text-container {
+        margin-right: 0;
+    }
+    .heading {
+        font-size: 2.0rem;
+    }
+    .headdesc {
+        font-size: 0.95rem;
+    }
+}
+
+/* ==========================================================================
+   ✨ LUXE HERO TITLE TYPOGRAPHY (FeminineBot Heading Only)
+   ========================================================================== */
+.luxe-hero-title {
+    /* 🎨 MODERN ELEGANT FONT: Switch to Syne, Playfair Display, or keep Plus Jakarta Sans */
+    font-family:  'Playfair Display', serif !important;
+    
+    /* 🎨 COLOR: Change this hex code to your preferred tone (e.g., #4E1E53 for deep purple, #111111 for deep black) */
+    /* color: #4E1E53 !important;  */
+    color: #2E6F40 !important;
+    
+    font-size: 3.2rem !important;
+    font-weight: 800 !important;
+    
+    /* ⚡ Letter-spacing creates a premium magazine look when tightened slightly */
+    letter-spacing: -0.04em !important; 
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    display: block !important;
+}

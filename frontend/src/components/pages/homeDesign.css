@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* ==========================================================================
+   🏠 COMPLETE SINGLE-SCREEN HOME LAYOUT (FIXES VERTICAL SCROLLBAR)
+   ========================================================================== */
+
+/* Restrains the page to exactly one viewport screen height */
+.premium-page-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden; /* Obliterates the vertical scrollbar */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    /* 🎨 KEEP your original base background color layer */
+    background-color: #EEF4F2;
+
+    /* 🌿🌸 COMBINED BACKGROUND IMAGES: All 4 SVGs listed together */
+    background-image: 
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234A7C59' opacity='0.08'%3E%3Cpath d='M17 8C14.24 8 12.01 9.94 11.17 12.5C12.14 11.56 13.5 11 15 11C18.31 11 21 13.69 21 17C21 17.5 20.9 18 20.73 18.46C21.5 17.44 22 16.14 22 14.71C22 11 19.3 8 17 8M12 2C8.69 2 6 4.69 6 8C6 8.5 6.1 9 6.27 9.46C5.5 8.44 5 7.14 5 5.71C5 2 7.7 2 10 2C12.76 2 14.99 3.94 15.83 6.5C14.86 5.56 13.5 5 12 5M12 10C8.69 10 6 12.69 6 16C6 16.5 6.1 17 6.27 17.46C5.5 16.44 5 15.14 5 13.71C5 10 7.7 10 10 10C12.76 10 14.99 11.94 15.83 14.5C14.86 13.56 13.5 13 12 13M19 1H17C12.03 1 8 5.03 8 10H10C14.97 10 19 5.97 19 1Z'/%3E%3C/svg%3E"), /* Leaf 1 */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234A7C59' opacity='0.08'%3E%3Cpath d='M17 8C14.24 8 12.01 9.94 11.17 12.5C12.14 11.56 13.5 11 15 11C18.31 11 21 13.69 21 17C21 17.5 20.9 18 20.73 18.46C21.5 17.44 22 16.14 22 14.71C22 11 19.3 8 17 8M12 2C8.69 2 6 4.69 6 8C6 8.5 6.1 9 6.27 9.46C5.5 8.44 5 7.14 5 5.71C5 2 7.7 2 10 2C12.76 2 14.99 3.94 15.83 6.5C14.86 5.56 13.5 5 12 5M12 10C8.69 10 6 12.69 6 16C6 16.5 6.1 17 6.27 17.46C5.5 16.44 5 15.14 5 13.71C5 10 7.7 10 10 10C12.76 10 14.99 11.94 15.83 14.5C14.86 13.56 13.5 13 12 13M19 1H17C12.03 1 8 5.03 8 10H10C14.97 10 19 5.97 19 1Z'/%3E%3C/svg%3E"), /* Leaf 2 */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A7C59' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.09'%3E%3Cpath d='M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z'/%3E%3Ccircle cx='12' cy='12' r='1' fill='%234A7C59'/%3E%3C/svg%3E"), /* Flower 1 */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A7C59' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.09'%3E%3Cpath d='M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z'/%3E%3Ccircle cx='12' cy='12' r='1' fill='%234A7C59'/%3E%3C/svg%3E"); /* Flower 2 */
+    
+    /* 📐 COMBINED POSITION AXIS: Must map order to each image array position above */
+    background-position: 
+      left 5px bottom 20px,   /* Position for Leaf 1 */
+      right 20px top 20px,    /* Position for Leaf 2 */
+      left 25px top 25px,     /* Position for Flower 1 */
+      right 25px bottom 25px; /* Position for Flower 2 */
+
+    /* 🔄 Explicit layout configuration mapping for all 4 slots */
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 260px, 260px, 240px, 240px;
+    background-attachment: fixed, fixed, fixed, fixed;
+}
+
+/* ==========================================================================
+   📱 MOBILE RESPONSIVE LAYOUT FOR BACKGROUND SVGS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .premium-page-wrapper {
+        /* 📉 Scale sizes down uniformly so they don't look bulky on small screens */
+        background-size: 140px, 140px, 120px, 120px !important;
+
+        /* 📍 Fix alignment: negative values tuck them elegantly into screen corners */
+        background-position: 
+          left -20px bottom 60px,  /* Leaf 1 - Tucked bottom-left, safely above the bottom bar */
+          right -20px top 80px,    /* Leaf 2 - Tucked top-right, clearing the navigation glass bar */
+          left -10px top 90px,     /* Flower 1 - Tucked top-left corner space */
+          right -10px bottom 60px !important; /* Flower 2 - Tucked bottom-right corner space */
+          
+        /* Keeps things perfectly locked down while scrolling on mobile devices */
+        background-attachment: scroll, scroll, scroll, scroll !important;
+    }
+}
+
+
+/* Call To Action Accent Button - Refined Modern Look */
+.hero-cta-btn {
+    align-self: flex-start;
+    background-color: #307043; /* Elegant Plum */
+    color: #ffffff !important;
+    border: none;
+    
+    /* 📐 Refined padding & sizing balance */
+    padding: 10px 25px !important;         /* More elegant horizontal padding */
+    font-size: 1.05rem !important;        /* Increased slightly for optimal reading readability */
+    font-weight: 600 !important;          /* Clean Medium-SemiBold (replaces chunkier 700) */
+    letter-spacing: 0.5px !important;     /* Clean, upscale letter tracking */
+    border-radius: 100px !important;       /* Perfect fluid pill container */
+    cursor: pointer !important;
+    
+    /* ⚡ Modern layout typography enhancements */
+    font-family: 'Playfair Display','Plus Jakarta Sans', sans-serif !important;
+    text-transform: capitalize;
+    
+    /* ✨ Smooth transitions for a modern interactive feel */
+    box-shadow: 0 4px 20px rgba(48, 112, 67, 0.15) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Premium Hover Interaction States */
+.hero-cta-btn:hover {
+    background-color: #1F4D2E !important;
+    transform: translateY(-2px); /* Gentle micro-lift */
+    
+    /* 🔥 Enhanced hover glow depth */
+    box-shadow: 0 8px 24px rgba(48, 112, 67, 0.25) !important;
+}
+
+/* Active press state for crisp interactive feedback */
+.hero-cta-btn:active {
+    transform: translateY(-0.5px);
+    box-shadow: 0 4px 12px rgba(78, 30, 83, 0.25);
+}
+
+/* ==========================================================================
+   🎯 SIDEWAY TEXT STAMPS & BRAND UTILITY BOTTOM FOOTER
+   ========================================================================== */
+
+.side-badge {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #A0AEC0;
+    z-index: 5;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+}
+.badge-left { left: 30px; transform: translateY(-50%) rotate(180deg); }
+.badge-right { right: 30px; }
+
+/* The Bottom Social Bar UI Component */
+.luxe-home-bottom-bar {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 60px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 60px !important;
+    box-sizing: border-box !important;
+    background: #EEF4F2 !important; /* Forces it to have a clear backdrop */
+    z-index: 99999 !important; /* Keeps it stacked above the background card illustrations */
+}
+
+.luxe-social-links {
+    display: flex !important;
+    gap: 24px !important;
+    align-items: center !important;
+}
+
+.luxe-social-icon i {
+    color: #111111 !important; /* Makes sure the icons are dark and highly visible */
+    font-size: 1.2rem !important;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+.luxe-social-icon i:hover {
+    color: #4E1E53 !important; /* Hover state matching your brand accent */
+}
+
+.luxe-legal-copy {
+    font-family: 'Playfair Display','Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.85rem !important;
+    /* color: #718096 !important; */
+      color: #fffff !important;
+    font-weight: 500 !important;
+}
+
+
+/* ==========================================================================
+   🎯 PREMIUM SIDE BADGES WITH EXTENDED DECORATIVE TRACK LINES
+   ========================================================================== */
+
+/* The main container blocks formatting the text positions */
+.side-badge {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 6px !important;
+    color: #A0AEC0 !important;
+    z-index: 5 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important; /* Space between the text and the line borders */
+}
+
+/* Draws the premium geometric accent tracking tracks */
+.side-badge::before,
+.side-badge::after {
+    content: '' !important;
+    width: 1px !important;
+    height: 120px !important; /* Height of the lines running off screen */
+    background-color: rgba(247, 126, 126, 0.35) !important;
+    display: block !important;
+}
+
+/* Left Orientation Modifications */
+.badge-left { 
+    left: 45px !important; 
+    writing-mode: vertical-rl !important;
+    transform: translateY(-50%) rotate(180deg) !important; 
+}
+
+/* Right Orientation Modifications */
+.badge-right { 
+    right: 45px !important; 
+    writing-mode: vertical-rl !important;
+}
+
+/* ==========================================================================
+   ✨ OPTIMIZED RECTANGULAR CARD LAYOUT (BALANCED CENTER-RIGHT)
+   ========================================================================== */
+
+/* 1. Global Section Setup */
+.hero-section-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px !important; 
+    box-sizing: border-box;
+    z-index: 10;
+    margin-top: 36px;
+}
+
+/* 2. Background Card Wrapper Setup */
+.hero-background-card {
+    
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    /* 🧭 Pulls the card away from the far right edge toward the center */
+    justify-content: flex-end !important; 
+    box-sizing: border-box;
+    padding: 40px 10% !important; /* Increased right padding to push the card closer to the center artwork */
+}
+
+/* 3. ✨ ELEGANT RECTANGULAR CARD OVERLAY */
+.hero-content-overlay {
+    background: rgba(255, 255, 255, 0.88) !important; 
+    backdrop-filter: blur(14px) !important;            
+    -webkit-backdrop-filter: blur(14px) !important;
+    padding: 45px 40px !important;                     
+    border-radius: 24px !important;                    
+    box-shadow: 0 15px 35px rgba(18, 53, 31, 0.05) !important; 
+    
+    /* 📐 Custom Width & Height adjustments to force a sleek premium rectangle */
+    width: 100% !important;
+    max-width: 580px !important;       /* Increased width for a true widescreen horizontal look */
+    min-height: 380px !important;      /* Set a defined minimum height to add premium structural weight */
+    
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important; /* 👈 Forces left-alignment for inner content items by default */
+    box-sizing: border-box !important;
+}
+
+/* 4. Downscaled Typography Layout (Left-Aligned) */
+.hero-main-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    color: #225E39 !important;                         
+    font-size: 4.2rem !important;                      
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.5px !important;
+    text-align: left !important;       /* 👈 strictly left aligned */
+    display: block !important;
+    margin: 0 !important;
+}
+
+.hero-sub-title {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    color: #1E293B !important;                         
+    font-size: 1.5rem !important;                     
+    font-weight: 600 !important;
+    margin: 8px 0 14px 0 !important;
+    letter-spacing: -0.2px !important;
+    text-align: left !important;        /* 👈 strictly left aligned */
+    display: block !important;
+}
+
+.hero-description-para {
+    font-family: 'Playfair Display', 'Plus Jakarta Sans', sans-serif !important;
+    /* color: #475569 !important; */
+    color: #000000 !important;
+    font-size: 0.96rem !important;                     
+    font-weight: 450 !important;
+    line-height: 1.6 !important;
+    margin: 0 0 28px 0 !important;
+    text-align: left !important;        /* 👈 strictly left aligned */
+    display: block !important;
+    width: 100% !important;
+    letter-spacing: 0.5px ;
+}
+
+/* 5. Centered Call-To-Action Button Container */
+.hero-cta-btn {
+    align-self: flex-start !important;      /* ✨ Magic override: Keeps ONLY the button perfectly centered inside the card */
+    width: 100% !important;
+    max-width: 180px !important;                       
+}
+
+/* ==========================================================================
+   📱 MOBILE-SPECIFIC ADJUSTMENTS (SNAP TO CENTER FOR VIEWPORTS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-section-container {
+        /* padding: 80px 20px 80px 20px !important; */
+    }
+
+    .hero-background-card {
+        justify-content: center !important; 
+        padding: 0 16px !important;
+    }
+
+    .hero-content-overlay {
+        padding: 35px 24px !important;                 
+        max-width: 95% !important;
+        min-height: auto !important;    /* Removes set desktop height constraints on tiny mobile screens */
+        align-items: center !important; /* Centers typography beautifully on mobile stacks */
+    }
+
+    .hero-main-title {
+        font-size: 3.0rem !important;
+        text-align: center !important;
+    }
+
+    .hero-sub-title {
+        font-size: 1.35rem !important;
+        text-align: center !important;
+    }
+
+    .hero-description-para {
+        font-size: 0.92rem !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+    }
+
+    .hero-cta-btn {
+        align-self: center !important;    /* ✨ Forces the button to snap to the center ONLY on mobile phones */
+        width: 100% !important;           
+        max-width: 180px !important;
+        padding: 10px 20px !important; 
+    }
+}
