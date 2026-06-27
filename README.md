@@ -129,10 +129,6 @@ It's a safe, private, judgment-free space where any woman can ask health questio
 
 <p align="center"> <img src="./frontend/src/assets/healthcon.png" alt="Health Consultation" width="100%"> </p>
 
-### AI Response
-
-<p align="center"> <img src="./frontend/src/assets/ss7.png" alt="AI Response" width="100%"> </p>
-
 
 
 ## 🌸 Website Overview
