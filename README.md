@@ -28,7 +28,7 @@ Women today lead in every field — medicine, engineering, entrepreneurship — 
 
 In many parts of the world, especially India, **women's health remains a taboo**. Questions about periods, PCOS, pregnancy, or mental well-being go unasked out of fear of judgment — and sometimes this silence becomes **life-threatening**.
 
-**FeminineBot exists to change that.**
+***FeminineBot exists to change that.***
 
 It's a safe, private, judgment-free space where any woman can ask health questions, receive reliable information, and feel supported — anytime, without hesitation. No data is stored. No one is watching. Just honest, helpful answers.
 
