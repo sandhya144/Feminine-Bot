@@ -32,6 +32,14 @@ In many parts of the world, especially India, **women's health remains a taboo**
 
 It's a safe, private, judgment-free space where any woman can ask health questions, receive reliable information, and feel supported — anytime, without hesitation. No data is stored. No one is watching. Just honest, helpful answers.
 
+
+
+<div align="center">
+
+[🚀 Deployed Link ](feminine-bot-oehm.vercel.app)  • [📁 Source Code](https://github.com/sandhya144/Feminine-Bot.git)
+
+</div>
+
 ---
 
 ## 🌟 What FeminineBot Offers
@@ -200,7 +208,7 @@ http://localhost:3000
 ## 📁 Project Structure
 
 ```
-Women Chatbot/
+Feminine Bot/
 ├── backend/
 │   ├── index.js          # Express server + Gemini API integration
 │   ├── package.json
