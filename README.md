@@ -116,28 +116,39 @@ It's a safe, private, judgment-free space where any woman can ask health questio
 ### 🏠 Homepage
 
 <p align="center">
-  <img src="./src/assets/homess.png" alt="Homepage" width="900"/>
+  <img src="./frontend/src/assets/homess.png" alt="Homepage" width="900"/>
 </p>
 
 ---
 
-### 🤖 ChatBot Interface
+## 🤖 ChatBot Interface
+### Welcome Screen
 
-<p align="center">
-  <img src="./src/assets/chatscreen.png" alt="Welcome Screen" width="31%"/>
-  <img src="./src/assets/healthcon.png" alt="Health Consultation" width="31%"/>
-  <img src="./src/assets/ss7.png" alt="AI Response" width="31%"/>
-</p>
+<p align="center"> <img src="./frontend/src/assets/chatscreen.png" alt="Welcome Screen" width="80%"> </p>
+
+### Health Consultation
+
+<p align="center"> <img src="./frontend/src/assets/healthcon.png" alt="Health Consultation" width="80%"> </p>
+
+### AI Response
+
+<p align="center"> <img src="./frontend/src/assets/ss7.png" alt="AI Response" width="80%"> </p>
 
 ---
 
-### 🌸 Website Overview
+## 🌸 Website Overview
+### Our Vision
 
-<p align="center">
-  <img src="./src/assets/ourvision.png" alt="Our Vision" width="31%"/>
-  <img src="./src/assets/aboutus.png" alt="About Us" width="31%"/>
-  <img src="./src/assets/challenges.png" alt="Challenges" width="31%"/>
-</p>
+<p align="center"> <img src="./frontend/src/assets/ourvision.png" alt="Our Vision" width="80%"> </p>
+
+### About Us
+
+<p align="center"> <img src="./frontend/src/assets/aboutus.png" alt="About Us" width="80%"> </p>
+
+### Challenges
+
+<p align="center"> <img src="./frontend/src/assets/challenge.png" alt="Challenges" width="80%"> </p>
+
 
 ---
 
