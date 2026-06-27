@@ -1,5 +1,4 @@
 import "./head.css";
-import logoImg from "../../assets/logo-nav.png";
 
 function Head() {
   return (

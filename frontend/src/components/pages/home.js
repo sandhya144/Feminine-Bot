@@ -3,7 +3,7 @@
 import React, { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import Navbar from "../layouts/Navbar";
-import Hero from "../sections/Hero";
+
 import About from "../sections/About";
 import Vision from '../sections/vision';
 import Challenge from '../sections/challenge';

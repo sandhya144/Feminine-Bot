@@ -1,6 +1,4 @@
-import ChatbotKit from "react-chatbot-kit";
 
-// import "./components/chatbot/chatcss.css";
 import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
