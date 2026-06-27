@@ -16,7 +16,7 @@
 
 <br/>
 
-[🚀 Get Started](#-installation) • [✨ Features](#-features) • [📸 Screenshots](#-screenshots) • [🤝 Contribute](#-contributing)
+[Get Started](#-installation) • [Features](#-features) • [Screenshots](#-screenshots) • [Contribute](#-contributing)
 
 </div>
 
@@ -36,13 +36,13 @@ It's a safe, private, judgment-free space where any woman can ask health questio
 
 <div align="center">
 
-[🚀 Deployed Link ](feminine-bot-oehm.vercel.app)  • [📁 Source Code](https://github.com/sandhya144/Feminine-Bot.git)
+[🔗 Live Link ](feminine-bot-oehm.vercel.app)  • [📁 Source Code](https://github.com/sandhya144/Feminine-Bot.git)
 
 </div>
 
 ---
 
-## 🌟 What FeminineBot Offers
+## 🤖 What FeminineBot Offers
 
 <table>
 <tr>
@@ -87,7 +87,7 @@ It's a safe, private, judgment-free space where any woman can ask health questio
 
 ---
 
-## ✨ Features
+## 💡 Features
 
 - 💬 **Conversational AI** — Natural chat powered by Google Gemini
 - 🎯 **Topic-aware responses** — Trained focus on women's wellness topics
@@ -113,11 +113,27 @@ It's a safe, private, judgment-free space where any woman can ask health questio
 
 ## 📸 Screenshots
 
-> *(Add your app screenshots here)*
+### 🏠 Homepage
 
-| Chat Interface | Health Topics |
-|---|---|
-| ![Screenshot 1](./screenshots/1.png) | ![Screenshot 2](./screenshots/2.png) |
+| Homepage |
+|---|
+| ![Homepage](./src/assets/homess.png) |
+
+---
+
+### 🤖 ChatBot Interface
+
+| Welcome Screen | Health Consultation | AI Response |
+|---|---|---|
+| ![Chat Screen](./src/assets/chatscreen.png) | ![Health Consultation](./src/assets/healthcon.png) | ![AI Response](./src/assets/ss7.png) |
+
+---
+
+### 🌸 Website Overview
+
+| Our Vision | About Us | Challenges |
+|---|---|---|
+| ![Our Vision](./src/assets/ourvision.png) | ![About Us](./src/assets/aboutus.png) | ![Challenges](./src/assets/challenges.png) |
 
 ---
 
