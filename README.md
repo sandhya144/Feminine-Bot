@@ -145,8 +145,8 @@ Before you begin, make sure you have:
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/Surya742/Chatbot-For-Women.git
-cd Chatbot-For-Women
+git clone https://github.com/sandhya144/Feminine-Bot.git
+cd Feminine-Bot
 ```
 
 ### Step 2 — Set up the Backend
@@ -321,7 +321,7 @@ Please keep contributions aligned with the project's mission: **helpful, respect
 Have feedback, questions, or ideas?
 
 📧 **Email:** [186sndy@gmail.com](mailto:186sndy@gmail.com)
-🐙 **GitHub:** [@Surya742](https://github.com/Surya742)
+🐙 **GitHub:** [@sandhya144](https://github.com/sandhya144)
 
 ---
 
