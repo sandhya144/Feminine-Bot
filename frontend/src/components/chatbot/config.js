@@ -1,5 +1,6 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 import logo from "../../assets/logo1.png";
+// import CustomBotMessage from './customBotmsg';
 
 
 const config = { 
@@ -18,6 +19,8 @@ const config = {
         }}
       />
     ),
+    // Integrates the Markdown parser component for response rendering
+    // botChatMessage: (props) => <CustomBotMessage {...props} />,
   },
 
   initialMessages: [createChatBotMessage("Hi, I'm FeminineBot."), createChatBotMessage(
