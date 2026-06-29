@@ -98,7 +98,7 @@ It's a safe, private, judgment-free space where any woman can ask health questio
 - 🔧 **Developer Friendly** — Easy local setup with `.env` configuration
 
 ---
-### Architecture Overview
+## 🏗️ System Architecture 
 
 ```mermaid
 graph LR
