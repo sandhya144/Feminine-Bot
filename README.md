@@ -98,36 +98,35 @@ It's a safe, private, judgment-free space where any woman can ask health questio
 - 🔧 **Developer Friendly** — Easy local setup with `.env` configuration
 
 ---
-
-## 🏗️ Architecture
+### Architecture Overview
 
 ```mermaid
 graph LR
-    User["👩 User"]
+    User["User"]
 
-    subgraph FRONTEND["Frontend — React.js"]
+    subgraph FRONTEND["Frontend - React.js"]
         UI["Chat Interface"]
         COMP["Components"]
     end
 
-    subgraph BACKEND["Backend — Node.js + Express"]
+    subgraph BACKEND["Backend - Node.js + Express"]
         API["POST /chat"]
-        ENV[".env\nGOOGLE_API_KEY"]
+        ENV[".env - GOOGLE_API_KEY"]
     end
 
     subgraph GEMINI["Google Gemini API"]
         MODEL["Gemini Model"]
     end
 
-    User --> UI
+    User -->|"asks health question"| UI
     UI --> COMP
-    COMP -->|"{ message }"| API
-    ENV -->|"API key"| API
+    COMP -->|"message"| API
+    ENV -->|"api key"| API
     API -->|"prompt"| MODEL
-    MODEL -->|"response"| API
-    API -->|"{ reply }"| COMP
-    COMP --> UI
-    UI --> User
+    MODEL -->|"ai response"| API
+    API -->|"reply"| COMP
+    COMP -->|"displays answer"| UI
+    UI -->|"reads response"| User
 ```
 
 | Layer | Technology |
@@ -143,7 +142,7 @@ graph LR
 
 ```mermaid
 sequenceDiagram
-    actor User as 👩 User
+    actor User as User
     participant FE as React Frontend
     participant BE as Express Backend
     participant GM as Gemini AI
@@ -152,11 +151,12 @@ sequenceDiagram
     FE->>BE: POST /chat { message }
     BE->>GM: Sends prompt
     GM-->>BE: Returns AI reply
-    BE-->>FE: { reply: "..." }
+    BE-->>FE: { reply }
     FE-->>User: Displays response in chat
 
-    Note over User,GM: ✅ Zero data stored at any step
+    Note over User,GM: Zero data stored at any point
 ```
+
 ---
 
 ## 📸 Screenshots
@@ -339,30 +339,29 @@ Send a health question, receive an AI-generated response.
 
 ```mermaid
 flowchart TD
-    START(["🐛 Something not working?"]) --> Q1{"Which problem?"}
+    START(["Something not working?"]) --> Q1{"Which problem?"}
 
     Q1 --> P1["Backend won't start"]
     Q1 --> P2["Frontend can't reach backend"]
     Q1 --> P3["AI gives empty response"]
 
-    P1 --> F1["Check backend/.env\nhas GOOGLE_API_KEY"]
-    F1 --> F2["Run npm install\ninside /backend"]
-    F2 --> F3(["✅ Try npm start again"])
+    P1 --> F1["Check backend/.env has GOOGLE_API_KEY"]
+    F1 --> F2["Run npm install inside /backend"]
+    F2 --> F3(["Try npm start again"])
 
-    P2 --> G1["Check frontend/.env\nhas REACT_APP_API_URL"]
-    G1 --> G2["Confirm backend is\nrunning on port 5000"]
-    G2 --> G3(["✅ Refresh the browser"])
+    P2 --> G1["Check frontend/.env has REACT_APP_API_URL"]
+    G1 --> G2["Confirm backend is running on port 5000"]
+    G2 --> G3(["Refresh the browser"])
 
-    P3 --> H1["Check API key is\nvalid at aistudio.google.com"]
-    H1 --> H2["Check API quota\nhasn't run out"]
-    H2 --> H3(["✅ Restart backend"])
+    P3 --> H1["Check API key at aistudio.google.com"]
+    H1 --> H2["Check API quota has not run out"]
+    H2 --> H3(["Restart backend"])
 
     style START fill:#e91e8c,color:#fff,stroke:none
     style F3 fill:#4caf50,color:#fff,stroke:none
     style G3 fill:#4caf50,color:#fff,stroke:none
     style H3 fill:#4caf50,color:#fff,stroke:none
 ```
-
 ---
 
 ## 🗺️ Roadmap
