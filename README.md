@@ -99,16 +99,64 @@ It's a safe, private, judgment-free space where any woman can ask health questio
 
 ---
 
-## 🛠️ Tech Stack
+## 🏗️ Architecture
+
+```mermaid
+graph LR
+    User["👩 User"]
+
+    subgraph FRONTEND["Frontend — React.js"]
+        UI["Chat Interface"]
+        COMP["Components"]
+    end
+
+    subgraph BACKEND["Backend — Node.js + Express"]
+        API["POST /chat"]
+        ENV[".env\nGOOGLE_API_KEY"]
+    end
+
+    subgraph GEMINI["Google Gemini API"]
+        MODEL["Gemini Model"]
+    end
+
+    User --> UI
+    UI --> COMP
+    COMP -->|"{ message }"| API
+    ENV -->|"API key"| API
+    API -->|"prompt"| MODEL
+    MODEL -->|"response"| API
+    API -->|"{ reply }"| COMP
+    COMP --> UI
+    UI --> User
+```
 
 | Layer | Technology |
 |---|---|
-| **Frontend** | React.js |
-| **Backend** | Node.js + Express |
-| **AI Engine** | Google Gemini API |
-| **Package Manager** | npm |
-| **Dev Environment** | Visual Studio Code |
+| Frontend | React.js |
+| Backend | Node.js + Express |
+| AI Engine | Google Gemini API |
+| Package Manager | npm |
 
+---
+
+## 🔄 How It Works
+
+```mermaid
+sequenceDiagram
+    actor User as 👩 User
+    participant FE as React Frontend
+    participant BE as Express Backend
+    participant GM as Gemini AI
+
+    User->>FE: Types health question
+    FE->>BE: POST /chat { message }
+    BE->>GM: Sends prompt
+    GM-->>BE: Returns AI reply
+    BE-->>FE: { reply: "..." }
+    FE-->>User: Displays response in chat
+
+    Note over User,GM: ✅ Zero data stored at any step
+```
 ---
 
 ## 📸 Screenshots
@@ -120,47 +168,18 @@ It's a safe, private, judgment-free space where any woman can ask health questio
 </p>
 
 
-## 🤖 ChatBot Interface
-### Welcome Screen
-
-<p align="center"> <img src="./frontend/src/assets/chatscreen.png" alt="Welcome Screen" width="100%"> </p>
-
-### Health Consultation
-
-<p align="center"> <img src="./frontend/src/assets/healthcon.png" alt="Health Consultation" width="100%"> </p>
+### 🤖 ChatBot Interface
+| Welcome Screen | Health Consultation |
+|---|---|
+| ![ChatScreen](./frontend/src/assets/chatscreen.png) | ![Health Consultation](./frontend/src/assets/healthcon.png) |
 
 
+### 🌸 Website Sections
 
-## 🌸 Website Overview
-### Our Vision
+| Our Vision | About Us | Challenges |
+|---|---|---|
+| ![Vision](./frontend/src/assets/ourvision.png) | ![About](./frontend/src/assets/aboutus.png) | ![Challenges](./frontend/src/assets/challenge.png) |
 
-<p align="center"> <img src="./frontend/src/assets/ourvision.png" alt="Our Vision" width="100%"> </p>
-
-### About Us
-
-<p align="center"> <img src="./frontend/src/assets/aboutus.png" alt="About Us" width="100%"> </p>
-
-### Challenges
-
-<p align="center"> <img src="./frontend/src/assets/challenge.png" alt="Challenges" width="100%"> </p>
-
-
----
-
-
-## ⚙️ How It Works
-
-```
-User types question
-      ↓
-React frontend sends message to Express backend
-      ↓
-Backend forwards prompt to Google Gemini API
-      ↓
-Gemini generates a safe, informative response
-      ↓
-Response is displayed in the chat window
-```
 
 ---
 
@@ -261,16 +280,28 @@ Feminine Bot/
 
 ## 🔌 API Reference
 
-**Endpoint:** `POST /chat`
+### `POST /chat`
 
-| Field | Type | Description |
-|---|---|---|
-| `message` | `string` | The user's health question |
+Send a health question, receive an AI-generated response.
+
+**Request body:**
+```json
+{
+  "message": "What are common symptoms of PCOS?"
+}
+```
 
 **Response:**
 ```json
 {
-  "reply": "AI-generated health guidance text here."
+  "reply": "PCOS (Polycystic Ovary Syndrome) commonly presents with irregular periods, excess androgen levels causing acne or hair growth, and polycystic ovaries visible on ultrasound..."
+}
+```
+
+**Error Response:**
+```json
+{
+  "error": "Something went wrong. Please try again."
 }
 ```
 
@@ -304,6 +335,33 @@ Feminine Bot/
 - Confirm request payload and response parsing logic
 
 </details>
+
+
+```mermaid
+flowchart TD
+    START(["🐛 Something not working?"]) --> Q1{"Which problem?"}
+
+    Q1 --> P1["Backend won't start"]
+    Q1 --> P2["Frontend can't reach backend"]
+    Q1 --> P3["AI gives empty response"]
+
+    P1 --> F1["Check backend/.env\nhas GOOGLE_API_KEY"]
+    F1 --> F2["Run npm install\ninside /backend"]
+    F2 --> F3(["✅ Try npm start again"])
+
+    P2 --> G1["Check frontend/.env\nhas REACT_APP_API_URL"]
+    G1 --> G2["Confirm backend is\nrunning on port 5000"]
+    G2 --> G3(["✅ Refresh the browser"])
+
+    P3 --> H1["Check API key is\nvalid at aistudio.google.com"]
+    H1 --> H2["Check API quota\nhasn't run out"]
+    H2 --> H3(["✅ Restart backend"])
+
+    style START fill:#e91e8c,color:#fff,stroke:none
+    style F3 fill:#4caf50,color:#fff,stroke:none
+    style G3 fill:#4caf50,color:#fff,stroke:none
+    style H3 fill:#4caf50,color:#fff,stroke:none
+```
 
 ---
 
@@ -375,3 +433,4 @@ Made with 💗 to empower women's wellness
 **[⬆ Back to top](#-femininebot)**
 
 </div>
+
