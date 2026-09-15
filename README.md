@@ -170,14 +170,11 @@ sequenceDiagram
   <img src="./frontend/src/assets/homess.png" alt="Homepage" width="100%"/>
 </p>
 
-| Welcome Screen | Health Consultation |
-|---|---|
-| ![ChatScreen](./frontend/src/assets/chatscreen.png) | ![Health Consultation](./frontend/src/assets/healthcon.png) |
-
-
-| Our Vision | About Us | Challenges |
-|---|---|---|
-| ![Vision](./frontend/src/assets/ourvision.png) | ![About](./frontend/src/assets/aboutus.png) | ![Challenges](./frontend/src/assets/challenge.png) |
+ ![ChatScreen](./frontend/src/assets/chatscreen.png) 
+ ![Health Consultation](./frontend/src/assets/healthcon.png) 
+ ![Vision](./frontend/src/assets/ourvision.png) 
+ ![About](./frontend/src/assets/aboutus.png) 
+ ![Challenges](./frontend/src/assets/challenge.png)
 
 
 ---
