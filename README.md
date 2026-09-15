@@ -159,22 +159,21 @@ sequenceDiagram
 
 ---
 
-## 📸 Screenshots
+## Working Demo
 
-### 🏠 Homepage
+[![FeminineBot Demo](./frontend/src/assets/homess.png)](https://github.com/user-attachments/assets/17572629-67cc-47eb-8a9e-7ba3c2eec1e8)
+
+
+## 📸 Screenshots
 
 <p align="center">
   <img src="./frontend/src/assets/homess.png" alt="Homepage" width="100%"/>
 </p>
 
-
-### 🤖 ChatBot Interface
 | Welcome Screen | Health Consultation |
 |---|---|
 | ![ChatScreen](./frontend/src/assets/chatscreen.png) | ![Health Consultation](./frontend/src/assets/healthcon.png) |
 
-
-### 🌸 Website Sections
 
 | Our Vision | About Us | Challenges |
 |---|---|---|
